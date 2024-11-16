@@ -19,13 +19,7 @@ public class Memoire implements Document {
     @Override
     public int taille() {
 
-        int t = 0;
-        for (Chapitre chapitre : chapitres) {
-
-            t += chapitre.taille();
-        }
-
-       return t;
+        return chapitres.stream().mapToInt(Chapitre::taille).sum();
     }
 
     public List<Chapitre> getChapitres() {
